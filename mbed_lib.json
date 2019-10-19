@@ -1,0 +1,37 @@
+{
+    "name": "enc28j60",
+    "config": {
+        "ETH_MOSI": "SPI_MOSI",
+        "ETH_MISO": "SPI_MISO",
+        "ETH_SCK":  "SPI_SCK",
+        "ETH_CS":   "SPI_CS",
+        "ETH_RESET":"SPI_RESET",
+        "ETH_INT":  "SPI_INT",
+        "binary-size": {
+            "help": "Configure device to use binary address space.",
+            "value": "0"
+        },
+        "dataflash-size": {
+            "help": "Configure device to use DataFlash address space.",
+            "value": "0"
+        }
+    },
+    "target_overrides": {
+       "HOMEAUTOMATISIERUNG": {
+           "ETH_MOSI": "FLASH_SPI_MOSI",
+           "ETH_MISO": "FLASH_SPI_MISO",
+           "ETH_SCK":  "FLASH_SPI_SCK",
+           "ETH_CS":   "FLASH_SPI_CS",
+           "ETH_RESET":"FLASH_SPI_CS",
+           "ETH_INT":  "FLASH_SPI_CS"
+       },
+       "NUCLEO_F767ZI": {
+           "ETH_MOSI": "D11",
+           "ETH_MISO": "D12",
+           "ETH_SCK":  "D13",
+           "ETH_CS":   "D10",
+           "ETH_RESET":"D9",
+           "ETH_INT":  "D7"
+       }  
+    }
+}
